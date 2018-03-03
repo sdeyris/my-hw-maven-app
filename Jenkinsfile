@@ -1,3 +1,3 @@
 node {
-  scm checkout
+  checkout scm
 }
