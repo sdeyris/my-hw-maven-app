@@ -1,10 +1,13 @@
+@Library('carlosrodlop-lib') _
+
 pipeline {
   agent {
     kubernetes {
       defaultContainer 'maven'
-      yamlFile 'KubernetesPod.yaml'
+      yaml libraryResource('podTemplates/maven.yaml')
     }
   }
+
   stages {
     stage('Run maven') {
       steps {
