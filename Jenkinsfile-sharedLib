@@ -4,6 +4,7 @@ pipeline {
   agent {
     kubernetes {
       defaultContainer 'maven'
+      label 'required-label'
       yaml libraryResource('podTemplates/maven.yaml')
     }
   }
